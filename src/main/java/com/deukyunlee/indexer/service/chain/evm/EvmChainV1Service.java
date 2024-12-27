@@ -1,8 +1,8 @@
 package com.deukyunlee.indexer.service.chain.evm;
 
 import com.deukyunlee.indexer.model.account.dto.AccountTokenTransferDto;
-import com.deukyunlee.indexer.model.rpc.evm.block.EvmGetBlockRpcResult;
-import com.deukyunlee.indexer.model.rpc.evm.block.EvmBlockReceiptsRpcResult;
+import com.deukyunlee.indexer.model.rpc.evm.result.block.EvmGetBlockRpcResult;
+import com.deukyunlee.indexer.model.rpc.evm.result.block.EvmBlockReceiptsRpcResult;
 import com.deukyunlee.indexer.model.type.evm.EvmChainType;
 import com.deukyunlee.indexer.model.type.evm.EvmRpcMethodType;
 import com.deukyunlee.indexer.service.chain.evm.strategy.EvmChainV1Strategy;

@@ -1,4 +1,4 @@
-package com.deukyunlee.indexer.model.rpc.evm;
+package com.deukyunlee.indexer.model.rpc.evm.result;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

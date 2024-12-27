@@ -2,7 +2,7 @@ package com.deukyunlee.indexer.service.token.evm.strategy;
 
 import com.deukyunlee.indexer.exception.CustomErrorType;
 import com.deukyunlee.indexer.exception.ErrorTypeException;
-import com.deukyunlee.indexer.model.rpc.evm.GeneralEvmRpcResult;
+import com.deukyunlee.indexer.model.rpc.evm.result.GeneralEvmRpcResult;
 import com.deukyunlee.indexer.model.type.evm.EvmChainType;
 import com.deukyunlee.indexer.model.type.evm.EvmRpcMethodType;
 import com.deukyunlee.indexer.model.type.evm.EvmTokenType;

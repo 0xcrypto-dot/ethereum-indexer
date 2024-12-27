@@ -1,9 +1,9 @@
 package com.deukyunlee.indexer.service.chain.evm.strategy;
 
 import com.deukyunlee.indexer.model.account.dto.AccountTokenTransferDto;
-import com.deukyunlee.indexer.model.rpc.evm.block.EvmBlockReceiptsRpcDetailResult;
-import com.deukyunlee.indexer.model.rpc.evm.block.EvmGetBlockRpcDetailResult;
-import com.deukyunlee.indexer.model.rpc.evm.block.EvmGetBlockRpcDetailTransactionResult;
+import com.deukyunlee.indexer.model.rpc.evm.result.block.EvmBlockReceiptsRpcDetailResult;
+import com.deukyunlee.indexer.model.rpc.evm.result.block.EvmGetBlockRpcDetailResult;
+import com.deukyunlee.indexer.model.rpc.evm.result.block.EvmGetBlockRpcDetailTransactionResult;
 import com.deukyunlee.indexer.model.type.evm.EvmChainType;
 
 import java.time.Instant;

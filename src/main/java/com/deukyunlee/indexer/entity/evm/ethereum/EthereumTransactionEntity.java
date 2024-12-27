@@ -1,8 +1,8 @@
 package com.deukyunlee.indexer.entity.evm.ethereum;
 
 import com.deukyunlee.indexer.entity.BaseEntity;
-import com.deukyunlee.indexer.model.rpc.evm.block.EvmBlockReceiptsRpcDetailResult;
-import com.deukyunlee.indexer.model.rpc.evm.block.EvmGetBlockRpcDetailTransactionResult;
+import com.deukyunlee.indexer.model.rpc.evm.result.block.EvmBlockReceiptsRpcDetailResult;
+import com.deukyunlee.indexer.model.rpc.evm.result.block.EvmGetBlockRpcDetailTransactionResult;
 import com.deukyunlee.indexer.util.NumberUtil;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

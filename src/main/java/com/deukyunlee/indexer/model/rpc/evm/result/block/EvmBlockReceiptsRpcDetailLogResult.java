@@ -1,4 +1,4 @@
-package com.deukyunlee.indexer.model.rpc.evm.block;
+package com.deukyunlee.indexer.model.rpc.evm.result.block;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
