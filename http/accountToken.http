@@ -1,20 +1,8 @@
 ### {get} ETH 보유량
-POST {{apiAddress}}/v1/ethereum/mainnet/accounts/tokens/transactions
+GET {{apiAddress}}/v1/ethereum/mainnet/accounts/0xbc1E0917e6Fe79ca2b94F032217FeBf1badF1f0e/tokens/ETH/transactions/20241113
 Content-Type: application/json;charset=UTF-8
-
-{
-  "account": "0xbc1E0917e6Fe79ca2b94F032217FeBf1bad51f0e",
-  "tokenAddress": "ETH",
-  "date": "20241111"
-}
 
 
 ### {get} ERC20 보유량
-POST {{apiAddress}}/v1/ethereum/mainnet/accounts/tokens/transactions
+POST {{apiAddress}}/v1/ethereum/mainnet/accounts/0xbc1E0917e6Fe79ca2b94F032217FeBf1badF1f0e/tokens/0x6B175474E89094C44Da98b954EedeAC495271d0F/transactions/20241113
 Content-Type: application/json;charset=UTF-8
-
-{
-  "account": "0xbc1E0917e6Fe79ca2b94F032217FeBf1bad51f0e",
-  "tokenAddress": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-  "date": "20241111"
-}

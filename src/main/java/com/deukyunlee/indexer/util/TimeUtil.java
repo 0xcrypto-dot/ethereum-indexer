@@ -4,6 +4,8 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 
 /**
  * Created by dukedev1004@crossangle.io on 2024. 12. 26.
@@ -28,5 +30,14 @@ public class TimeUtil {
         long unixTimestamp = Long.parseLong(hex, 16);
 
         return Instant.ofEpochSecond(unixTimestamp);
+    }
+
+    /**
+     * Converts {@link LocalDate} to an {@link Instant}
+     * @param localDate the {@link LocalDate} to convert
+     * @return the corresponding {@link Instant} at the start of the day in UTC
+     */
+    public static Instant convertLocalDateToInstant(LocalDate localDate) {
+        return localDate.atStartOfDay(ZoneId.of(UTC)).toInstant();
     }
 }
