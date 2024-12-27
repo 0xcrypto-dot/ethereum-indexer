@@ -65,7 +65,7 @@ public class EvmEthereumMainnetChainV1Strategy implements EvmChainV1Strategy {
 
     @Override
     public long getLatestProcessedBlockNumber() {
-        return ethereumBlockRepository.findByOrderByNumberDesc()
+        return ethereumBlockRepository.findFirstByOrderByNumberDesc()
                 .map(EthereumBlockEntity::getNumber)
                 .orElse(0L);
     }
@@ -134,10 +134,10 @@ public class EvmEthereumMainnetChainV1Strategy implements EvmChainV1Strategy {
 
     @Override
     public void processDailyLastBlocks() {
-        EthereumBlockEntity firstBlockEntity = ethereumBlockRepository.findByOrderByNumberAsc()
+        EthereumBlockEntity firstBlockEntity = ethereumBlockRepository.findFirstByOrderByNumberAsc()
                 .orElseThrow(() -> new ErrorTypeException("FIRST_BLOCK_NOT_FOUND", CustomErrorType.FIRST_BLOCK_NOT_FOUND));
 
-        EthereumBlockEntity lastBlockEntity = ethereumBlockRepository.findByOrderByNumberDesc()
+        EthereumBlockEntity lastBlockEntity = ethereumBlockRepository.findFirstByOrderByNumberDesc()
                 .orElseThrow(() -> new ErrorTypeException("LAST_BLOCK_NOT_FOUND", CustomErrorType.LAST_BLOCK_NOT_FOUND));
 
         Instant startDate = getStartDate(firstBlockEntity);
@@ -147,7 +147,7 @@ public class EvmEthereumMainnetChainV1Strategy implements EvmChainV1Strategy {
     }
 
     private Instant getStartDate(EthereumBlockEntity firstBlockEntity) {
-        return ethereumDailyBlockRepository.findByOrderByDateDesc()
+        return ethereumDailyBlockRepository.findFirstByOrderByDateDesc()
                 .map(EthereumDailyBlockEntity::getDate)
                 .orElse(firstBlockEntity.getDate())
                 .plus(1, ChronoUnit.DAYS);

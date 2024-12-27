@@ -11,6 +11,6 @@ import java.util.Optional;
  */
 public interface EthereumDailyBlockRepository extends JpaRepository<EthereumDailyBlockEntity, Long> {
     Optional<EthereumDailyBlockEntity> findByDate(Instant date);
-    Optional<EthereumDailyBlockEntity> findByOrderByDateDesc();
+    Optional<EthereumDailyBlockEntity> findFirstByOrderByDateDesc();
 }
 

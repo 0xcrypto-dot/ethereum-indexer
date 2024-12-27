@@ -56,9 +56,9 @@ public class EvmErc20TokenV1Strategy implements EvmTokenV1Strategy {
     public BigDecimal getBalance(EvmChainType evmChainType, String address, String tokenAddress, long blockNumber) {
         String hexBlockNumber = NumberUtil.convertLongToHex(blockNumber);
 
-        String tokenAddressWithoutPrefix = tokenAddress.startsWith(ADDRESS_PREFIX) ? tokenAddress.substring(2) : tokenAddress;
+        String addressWithoutPrefix = address.startsWith(ADDRESS_PREFIX) ? address.substring(2) : address;
 
-        String param = String.format(EvmRpcMethodType.ETH_CALL.getParamsFormat(), address, MethodSigType.BALANCE_OF.getMethodSig() + ZERO_PADDING + tokenAddressWithoutPrefix, hexBlockNumber);
+        String param = String.format(EvmRpcMethodType.ETH_CALL.getParamsFormat(), tokenAddress, MethodSigType.BALANCE_OF.getMethodSig() + ZERO_PADDING + addressWithoutPrefix, hexBlockNumber);
 
         String jsonInput = EvmRpcMethodType.getJsonParam(EvmRpcMethodType.ETH_CALL, INITIAL_ID, param);
 

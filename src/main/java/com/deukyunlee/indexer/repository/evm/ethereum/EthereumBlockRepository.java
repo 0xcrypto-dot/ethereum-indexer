@@ -10,8 +10,8 @@ import java.util.Optional;
  * Created by dufqkd1004@naver.com on 2024. 12. 25.
  */
 public interface EthereumBlockRepository extends JpaRepository<EthereumBlockEntity, Long> {
-    Optional<EthereumBlockEntity> findByOrderByNumberDesc();
-    Optional<EthereumBlockEntity> findByOrderByNumberAsc();
+    Optional<EthereumBlockEntity> findFirstByOrderByNumberDesc();
+    Optional<EthereumBlockEntity> findFirstByOrderByNumberAsc();
 
     Optional<EthereumBlockEntity> findFirstByTimeLessThanOrderByTimeDesc(Instant date);
 }

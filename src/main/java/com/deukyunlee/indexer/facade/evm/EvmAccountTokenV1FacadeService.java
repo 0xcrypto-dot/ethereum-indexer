@@ -10,7 +10,6 @@ import com.deukyunlee.indexer.service.chain.evm.strategy.EvmChainV1Strategy;
 import com.deukyunlee.indexer.service.token.evm.EvmTokenV1Service;
 import com.deukyunlee.indexer.service.token.evm.factory.EvmTokenV1StrategyFactory;
 import com.deukyunlee.indexer.service.token.evm.strategy.EvmTokenV1Strategy;
-import com.deukyunlee.indexer.util.AddressUtil;
 import com.deukyunlee.indexer.util.TimeUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
