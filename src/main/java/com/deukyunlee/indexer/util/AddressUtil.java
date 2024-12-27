@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 22.
+ * Created by dufqkd1004@naver.com on 2024. 12. 22.
  */
 @Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)

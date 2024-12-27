@@ -7,7 +7,7 @@ import java.time.Instant;
 import java.util.List;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 25.
+ * Created by dufqkd1004@naver.com on 2024. 12. 25.
  */
 public interface EthereumErc20TransferRepository extends JpaRepository<EthereumErc20TransferEntity, Long> {
     List<EthereumErc20TransferEntity> findAllByBlockDateAndContractAddressAndFromOrTo(Instant date, String contractAddress, String from, String to);

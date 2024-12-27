@@ -6,7 +6,7 @@ import lombok.Getter;
 import java.io.Serial;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 22.
+ * Created by dufqkd1004@naver.com on 2024. 12. 22.
  */
 @Getter
 public class ErrorTypeException extends RuntimeException {

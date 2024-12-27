@@ -6,7 +6,7 @@ import com.deukyunlee.indexer.model.type.evm.EvmTokenType;
 import java.math.BigDecimal;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 23.
+ * Created by dufqkd1004@naver.com on 2024. 12. 23.
  */
 public interface EvmTokenV1Strategy {
     EvmTokenType getStrategyName();

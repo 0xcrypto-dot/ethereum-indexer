@@ -4,7 +4,7 @@ package com.deukyunlee.indexer.model.type.evm;
 import com.deukyunlee.indexer.model.type.CodeEnum;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 23.
+ * Created by dufqkd1004@naver.com on 2024. 12. 23.
  */
 public enum EvmTokenType implements CodeEnum {
     NATIVE,

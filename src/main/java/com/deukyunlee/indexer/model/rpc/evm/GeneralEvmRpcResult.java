@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 23.
+ * Created by dufqkd1004@naver.com on 2024. 12. 23.
  */
 @Getter
 @AllArgsConstructor

@@ -18,7 +18,7 @@ import java.math.BigInteger;
 import java.time.Instant;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 26.
+ * Created by dufqkd1004@naver.com on 2024. 12. 26.
  */
 @Entity(name = "ethereum_erc_20_transfers")
 @Table(

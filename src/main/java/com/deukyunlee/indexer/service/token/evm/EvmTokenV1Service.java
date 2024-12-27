@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 23.
+ * Created by dufqkd1004@naver.com on 2024. 12. 23.
  */
 @Service
 public class EvmTokenV1Service {

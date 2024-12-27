@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.LongStream;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 25.
+ * Created by dufqkd1004@naver.com on 2024. 12. 25.
  */
 @Service
 @RequiredArgsConstructor

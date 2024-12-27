@@ -7,7 +7,7 @@ import java.time.Instant;
 import java.util.List;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 25.
+ * Created by dufqkd1004@naver.com on 2024. 12. 25.
  */
 public interface EthereumTransactionRepository extends JpaRepository<EthereumTransactionEntity, Long> {
     List<EthereumTransactionEntity> findAllByBlockDateAndFromOrTo(Instant blockDate, String from, String to);

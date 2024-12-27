@@ -7,7 +7,7 @@ import java.time.Instant;
 import java.util.Optional;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 25.
+ * Created by dufqkd1004@naver.com on 2024. 12. 25.
  */
 public interface EthereumBlockRepository extends JpaRepository<EthereumBlockEntity, Long> {
     Optional<EthereumBlockEntity> findByOrderByNumberDesc();

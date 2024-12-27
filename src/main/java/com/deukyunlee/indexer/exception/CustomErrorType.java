@@ -3,7 +3,7 @@ package com.deukyunlee.indexer.exception;
 import org.springframework.http.HttpStatus;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 22.
+ * Created by dufqkd1004@naver.com on 2024. 12. 22.
  */
 public enum CustomErrorType implements ErrorType {
     // DATE 3000~3099

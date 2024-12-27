@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 22.
+ * Created by dufqkd1004@naver.com on 2024. 12. 22.
  */
 @Service
 @RequiredArgsConstructor

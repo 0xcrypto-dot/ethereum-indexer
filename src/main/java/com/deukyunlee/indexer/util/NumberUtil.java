@@ -12,7 +12,7 @@ import java.math.BigInteger;
 import java.util.Optional;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 23.
+ * Created by dufqkd1004@naver.com on 2024. 12. 23.
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Slf4j

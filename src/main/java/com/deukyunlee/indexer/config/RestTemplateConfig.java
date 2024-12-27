@@ -8,7 +8,7 @@ import java.net.http.HttpClient;
 import java.time.Duration;
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 22.
+ * Created by dufqkd1004@naver.com on 2024. 12. 22.
  */
 @Configuration
 public class RestTemplateConfig {

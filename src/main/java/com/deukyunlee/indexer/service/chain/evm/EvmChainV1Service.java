@@ -19,7 +19,7 @@ import java.util.List;
 
 
 /**
- * Created by dukedev1004@crossangle.io on 2024. 12. 25.
+ * Created by dufqkd1004@naver.com on 2024. 12. 25.
  */
 @Service
 @Slf4j
