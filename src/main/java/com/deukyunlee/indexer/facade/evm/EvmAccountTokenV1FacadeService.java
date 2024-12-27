@@ -37,9 +37,6 @@ public class EvmAccountTokenV1FacadeService {
 //       - Cache expiry: 1 hour
 //       - Purpose: Avoid redundant calls to the service and improve response time for identical requests.
     public AccountTokenV1Response getAccountTokenData(EvmChainType evmChainType, String account, String tokenAddress, LocalDate date) {
-        // Validate inputs
-        AddressUtil.validateEvmAddress(account);
-        AddressUtil.validateEvmTokenAddress(evmChainType, tokenAddress);
 
         Instant dateInstant = TimeUtil.convertLocalDateToInstant(date);
 

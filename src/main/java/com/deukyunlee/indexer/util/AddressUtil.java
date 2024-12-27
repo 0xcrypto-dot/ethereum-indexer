@@ -13,35 +13,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class AddressUtil {
-    private static final String EVM_ADDRESS_REGEX = "^0x[a-fA-F0-9]{40}$";
     private static final String ZERO_X = "0x";
     public static final int ERC_20_TRANSFER_ADDRESS_TOPIC_BEGIN_INDEX = 24;
-
-    /**
-     * Validates whether the given address is a valid EVM address.
-     *
-     * @param address the EVM address to validate
-     * @throws ErrorTypeException if the address does not match the EVM address regex
-     */
-    public static void validateEvmAddress(String address) {
-        if (!address.matches(EVM_ADDRESS_REGEX)) {
-            throw new ErrorTypeException(String.format("EVM_ADDRESS_WITH_REGEX_NOT_VALID: [%s]", address), CustomErrorType.EVM_ADDRESS_WITH_REGEX_NOT_VALID);
-        }
-    }
-
-    /**
-     * Validates whether the given token address is valid for a specific EVM chain type.
-     * The token address must match the EVM address regex unless it matches the native token symbol of the chain.
-     *
-     * @param evmChainType the type of the EVM chain
-     * @param tokenAddress the token address to validate
-     * @throws ErrorTypeException if the token address is invalid or does not match the EVM address regex
-     */
-    public static void validateEvmTokenAddress(EvmChainType evmChainType, String tokenAddress) {
-        if (!evmChainType.getNativeTokenSymbol().equals(tokenAddress) && !tokenAddress.matches(EVM_ADDRESS_REGEX)) {
-            throw new ErrorTypeException(String.format("EVM_TOKEN_ADDRESS_WITH_REGEX_INVALID: [%s]", tokenAddress), CustomErrorType.EVM_TOKEN_ADDRESS_WITH_REGEX_INVALID);
-        }
-    }
 
     /**
      * Removes zero padding from an Ethereum address or topic value,
