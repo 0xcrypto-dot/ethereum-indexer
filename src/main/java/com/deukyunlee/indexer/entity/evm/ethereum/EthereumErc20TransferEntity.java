@@ -49,7 +49,7 @@ public class EthereumErc20TransferEntity extends BaseEntity {
     @Column(name = "log_index", nullable = false)
     private long logIndex;
 
-    @Column(name = "contract_address", nullable = false)
+    @Column(name = "contract_address", nullable = true)
     private String contractAddress;
 
     @Column(name = "from_address", nullable = true)

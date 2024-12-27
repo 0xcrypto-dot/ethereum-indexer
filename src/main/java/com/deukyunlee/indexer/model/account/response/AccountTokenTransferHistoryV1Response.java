@@ -24,7 +24,7 @@ public class AccountTokenTransferHistoryV1Response {
     private String to;
 
     @JsonProperty(required = true, value = "value")
-    private BigDecimal value;
+    private String value;
 
     @JsonProperty(required = true, value = "timestamp")
     private long timestamp;
@@ -35,9 +35,9 @@ public class AccountTokenTransferHistoryV1Response {
         this.from = accountTokenTransferDto.getFrom();
         this.to = accountTokenTransferDto.getTo();
         this.value = (BigDecimal.ZERO.compareTo(transferValue) == 0) ?
-                transferValue :
+                transferValue.toPlainString() :
                 NumberUtil.getBalanceDividedByDecimal(transferValue, decimal)
-                        .setScale(4, RoundingMode.DOWN);
+                        .setScale(4, RoundingMode.DOWN).toPlainString();
 
         this.timestamp = accountTokenTransferDto.getTimestamp().getEpochSecond();
     }

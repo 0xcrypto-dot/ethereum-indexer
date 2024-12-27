@@ -22,16 +22,16 @@ import java.util.List;
 @JsonView()
 public class AccountTokenV1Response {
     @JsonProperty(required = true, value = "balance")
-    private BigDecimal balance;
+    private String balance;
 
     @JsonProperty(required = true, value = "transfer_history")
     private List<AccountTokenTransferHistoryV1Response> transferHistories;
 
     public AccountTokenV1Response(long decimal, BigDecimal balance, List<AccountTokenTransferDto> transferHistoryDtos) {
         this.balance = (BigDecimal.ZERO.compareTo(balance) == 0) ?
-                balance :
+                balance.toPlainString() :
                 NumberUtil.getBalanceDividedByDecimal(balance, decimal)
-                        .setScale(4, RoundingMode.DOWN);
+                        .setScale(4, RoundingMode.DOWN).toPlainString();
 
         this.transferHistories = transferHistoryDtos.stream()
                 .map(transferHistoryDto -> new AccountTokenTransferHistoryV1Response(decimal, transferHistoryDto))

@@ -14,7 +14,7 @@
     apiKey: a55c3433b235406663e35802030de0ae
   ```
 
-2. /src/main/resources 하위 database 및 redis 관련 정보를 수정합니다.
+2. /src/main/resources 하위 application.yml 파일에서 database 및 redis 관련 정보를 수정합니다.
 - DB 정보 예시
 
   ![img_3.png](img_3.png)
