@@ -43,6 +43,7 @@ import java.util.stream.Collectors;
 public class EvmEthereumMainnetChainV1Strategy implements EvmChainV1Strategy {
     private static final String INITIAL_ID = "0";
     private static final String Erc20TransferEvent = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef";
+    private static final boolean transctionSuccess = true;
 
     private final RpcSpec rpcSpec;
     private final EthereumBlockRepository ethereumBlockRepository;
@@ -97,7 +98,7 @@ public class EvmEthereumMainnetChainV1Strategy implements EvmChainV1Strategy {
 
     @Override
     public List<AccountTokenTransferDto> getTransactions(Instant date, String accountAddress) {
-        return ethereumTransactionRepository.findAllByBlockDateAndFromOrToAndSuccess(date, accountAddress, accountAddress, true).stream()
+        return ethereumTransactionRepository.findAllByBlockDateAndSuccessAndFromOrTo(date, transctionSuccess, accountAddress, accountAddress).stream()
                 .map(AccountTokenTransferDto::new)
                 .toList();
     }

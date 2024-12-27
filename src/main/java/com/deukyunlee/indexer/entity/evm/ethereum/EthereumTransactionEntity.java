@@ -31,8 +31,8 @@ import java.util.Optional;
         name = "ethereum_transactions",
         indexes = {
                 @Index(name = "uidx_ethereum_transactions_block_no_hash", columnList = "block_number, hash", unique = true),
-                @Index(name = "idx_ethereum_transactions_block_date_from_address_success", columnList = "block_date, from_address, success"),
-                @Index(name = "idx_ethereum_transactions_block_date_to_address_success", columnList = "block_date, to_address, success")
+                @Index(name = "idx_ethereum_transactions_block_date_success_from_address", columnList = "block_date, success, from_address"),
+                @Index(name = "idx_ethereum_transactions_block_date_success_to_address", columnList = "block_date, success, to_address")
 
         }
 )
