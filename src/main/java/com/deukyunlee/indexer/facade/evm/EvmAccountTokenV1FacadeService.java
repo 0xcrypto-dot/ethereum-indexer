@@ -39,13 +39,14 @@ public class EvmAccountTokenV1FacadeService {
 
         Instant dateInstant = TimeUtil.convertLocalDateToInstant(date);
 
+        // Retrieve the appropriate strategy for the specified EVM-compatible chain type
         EvmChainV1Strategy evmChainV1Strategy = evmChainV1StrategyFactory.getStrategy(evmChainType);
 
         long blockNumber = evmChainV1Service.getDailyLastBlockNumber(evmChainV1Strategy, dateInstant);
 
         EvmTokenType evmTokenType = EvmTokenType.getTokenAddress(evmChainType, tokenAddress);
 
-        // Create a strategy object using the factory pattern based on the token type (e.g., ERC20, NATIVE_TOKEN)
+        // Retrieve a strategy for the specified token type (e.g., ERC20, NATIVE_TOKEN)
         EvmTokenV1Strategy evmTokenV1Strategy = evmTokenV1StrategyFactory.getStrategy(evmTokenType);
 
         evmTokenV1Service.checkContractDeployed(evmTokenV1Strategy, evmChainType, tokenAddress, blockNumber);
