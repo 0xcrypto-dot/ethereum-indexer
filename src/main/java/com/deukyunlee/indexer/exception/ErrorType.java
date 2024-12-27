@@ -8,5 +8,6 @@ import org.springframework.http.HttpStatus;
 public interface ErrorType {
     int getCode();
     HttpStatus getHttpStatus();
+    ErrorLogLevel getLogLevel();
 }
 

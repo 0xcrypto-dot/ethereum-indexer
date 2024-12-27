@@ -38,3 +38,21 @@ logging:
   charset:
     console: UTF-8
     file: UTF-8
+
+springdoc:
+  webjars:
+    prefix:
+  api-docs:
+    version: OPENAPI_3_0
+    groups:
+      enabled: true
+  swagger-ui:
+    path: /docs
+    tags-sorter: alpha
+    operations-sorter: alpha
+    use-root-path: false
+
+swagger:
+  schema:
+    url: http://localhost:8080
+    description: Ethereum Indexer

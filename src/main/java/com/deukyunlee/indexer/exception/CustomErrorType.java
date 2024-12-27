@@ -40,10 +40,11 @@ public enum CustomErrorType implements ErrorType {
 
     private final int code;
     private final HttpStatus httpStatus;
-
+    private final ErrorLogLevel logLevel;
 
     CustomErrorType(int code, HttpStatus httpStatus) {
         this.code = code;
+        this.logLevel = ErrorLogLevel.ERROR;
         this.httpStatus = httpStatus;
     }
 
@@ -56,4 +57,10 @@ public enum CustomErrorType implements ErrorType {
     public HttpStatus getHttpStatus() {
         return httpStatus;
     }
+
+    @Override
+    public ErrorLogLevel getLogLevel() {
+        return this.logLevel;
+    }
+
 }
