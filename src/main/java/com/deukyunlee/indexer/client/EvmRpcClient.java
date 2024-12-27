@@ -26,6 +26,8 @@ public class EvmRpcClient implements RpcSpec {
     @Value("${infura.apiKey}")
     private String INFURA_API_KEY;
 
+    private static final int MAX_DELAY = 32000;
+
     private final RestTemplate restTemplate;
 
     public <T> T callPost(EvmChainType evmChainType, String jsonInput, int maxRetries, Class<T> classes) {
@@ -33,6 +35,8 @@ public class EvmRpcClient implements RpcSpec {
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<String> request = new HttpEntity<>(jsonInput, headers);
         int retries = 0;
+
+        int backoffDelay = 1000;
         while (retries < maxRetries) {
             try {
                 ResponseEntity<T> response = restTemplate.postForEntity(String.format(evmChainType.getInfuraUrl(), INFURA_API_KEY), request, classes);
@@ -40,8 +44,10 @@ public class EvmRpcClient implements RpcSpec {
                     return response.getBody();
                 }
             } catch (Exception e) {
-                log.error("RPC Error Occurred: {}, {}, \nRetries: {}", jsonInput, e.getMessage(), retries);
-                SleepUtil.wait(1000);
+                log.error("RPC Error Occurred: {}, {}, \nRetries: {}/{}", jsonInput, e.getMessage(), retries, maxRetries);
+                SleepUtil.wait(backoffDelay);
+
+                backoffDelay = Math.min(backoffDelay * 2, MAX_DELAY);
                 retries++;
             }
         }

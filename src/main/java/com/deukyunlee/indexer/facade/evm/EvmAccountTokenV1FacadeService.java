@@ -40,6 +40,7 @@ public class EvmAccountTokenV1FacadeService {
         // Validate inputs
         AddressUtil.validateEvmAddress(account);
         AddressUtil.validateEvmTokenAddress(evmChainType, tokenAddress);
+
         Instant dateInstant = TimeUtil.convertLocalDateToInstant(date);
 
         EvmChainV1Strategy evmChainV1Strategy = evmChainV1StrategyFactory.getStrategy(evmChainType);
