@@ -97,7 +97,7 @@ public class EvmEthereumMainnetChainV1Strategy implements EvmChainV1Strategy {
 
     @Override
     public List<AccountTokenTransferDto> getTransactions(Instant date, String accountAddress) {
-        return ethereumTransactionRepository.findAllByBlockDateAndFromOrTo(date, accountAddress, accountAddress).stream()
+        return ethereumTransactionRepository.findAllByBlockDateAndFromOrToAndSuccess(date, accountAddress, accountAddress, true).stream()
                 .map(AccountTokenTransferDto::new)
                 .toList();
     }

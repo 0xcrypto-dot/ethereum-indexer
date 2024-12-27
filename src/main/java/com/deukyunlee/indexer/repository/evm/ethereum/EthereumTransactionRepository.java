@@ -10,5 +10,5 @@ import java.util.List;
  * Created by dufqkd1004@naver.com on 2024. 12. 25.
  */
 public interface EthereumTransactionRepository extends JpaRepository<EthereumTransactionEntity, Long> {
-    List<EthereumTransactionEntity> findAllByBlockDateAndFromOrTo(Instant blockDate, String from, String to);
+    List<EthereumTransactionEntity> findAllByBlockDateAndFromOrToAndSuccess(Instant blockDate, String from, String to, boolean success);
 }
