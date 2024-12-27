@@ -15,13 +15,17 @@ spring:
   datasource:
     hikari:
       maximum-pool-size: 4
-    #    url: jdbc:postgresql://10.10.11.103:5432/postgres?serverTimezone=UTC&currentSchema=test
     url: jdbc:postgresql://localhost:5432/postgres?serverTimezone=UTC
     username: admin
     password: qwer1234
     driver-class-name: org.postgresql.Driver
   jackson:
     time-zone: UTC
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
 
 
 logging:

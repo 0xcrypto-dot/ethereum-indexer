@@ -27,7 +27,7 @@ import java.time.temporal.ChronoUnit;
 @Table(
         name = "ethereum_blocks",
         indexes = {
-                @Index(name = "uidx_ethereum_blocks_number", columnList = "number", unique = true)
+                @Index(name = "uidx_eth_blocks_number", columnList = "number", unique = true)
         }
 )
 @AllArgsConstructor

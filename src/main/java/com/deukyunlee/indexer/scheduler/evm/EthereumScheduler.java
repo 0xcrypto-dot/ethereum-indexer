@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class EthereumScheduler {
     private final EvmBlockV1FacadeService evmBlockV1FacadeService;
 
-    @Scheduled(fixedDelay = 30000)
+//    @Scheduled(fixedDelay = 30000)
     public void processEthereumBlocks() {
         evmBlockV1FacadeService.processBlocks(EvmChainType.ETHEREUM_MAINNET);
     }

@@ -14,7 +14,6 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import java.math.BigInteger;
 import java.time.Instant;
@@ -30,15 +29,14 @@ import java.util.Optional;
 @Table(
         name = "ethereum_transactions",
         indexes = {
-                @Index(name = "uidx_ethereum_transactions_block_no_hash", columnList = "block_number, hash", unique = true),
-                @Index(name = "idx_ethereum_transactions_block_date_success_from_address", columnList = "block_date, success, from_address"),
-                @Index(name = "idx_ethereum_transactions_block_date_success_to_address", columnList = "block_date, success, to_address")
+                @Index(name = "uidx_eth_transactions_block_no_hash", columnList = "block_number, hash", unique = true),
+                @Index(name = "idx_eth_transactions_block_date_success_from", columnList = "block_date, success, from_address"),
+                @Index(name = "idx_eth_transactions_block_date_success_to", columnList = "block_date, success, to_address")
 
         }
 )
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@ToString
 public class EthereumTransactionEntity extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @jakarta.persistence.Id

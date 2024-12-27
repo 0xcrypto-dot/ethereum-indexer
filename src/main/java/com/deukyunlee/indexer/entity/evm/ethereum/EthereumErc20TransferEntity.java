@@ -24,9 +24,9 @@ import java.time.Instant;
 @Table(
         name = "ethereum_erc_20_transfers",
         indexes = {
-                @Index(name = "uidx_ethereum_erc_20_transfer_tx_hash_log_index", columnList = "transaction_hash, log_index", unique = true),
-                @Index(name = "idx_ethereum_erc_20_transfer_block_date_contract_address_from_address", columnList = "block_date, contract_address, from_address"),
-                @Index(name = "idx_ethereum_erc_20_transfer_block_date_contract_address_to_address", columnList = "block_date, contract_address, to_address"),
+                @Index(name = "uidx_eth_erc_20_transfer_tx_hash_log_index", columnList = "transaction_hash, log_index", unique = true),
+                @Index(name = "idx_eth_erc_20_transfer_date_ca_from", columnList = "block_date, contract_address, from_address"),
+                @Index(name = "idx_eth_erc_20_transfer_date_ca_to", columnList = "block_date, contract_address, to_address"),
         }
 )
 @Getter

@@ -1,5 +1,6 @@
 package com.deukyunlee.indexer.facade.evm;
 
+import com.deukyunlee.indexer.config.redis.RedisPrefix;
 import com.deukyunlee.indexer.model.account.dto.AccountTokenTransferDto;
 import com.deukyunlee.indexer.model.account.response.AccountTokenV1Response;
 import com.deukyunlee.indexer.model.type.evm.EvmChainType;
@@ -13,6 +14,7 @@ import com.deukyunlee.indexer.service.token.evm.strategy.EvmTokenV1Strategy;
 import com.deukyunlee.indexer.util.TimeUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -32,9 +34,7 @@ public class EvmAccountTokenV1FacadeService {
     private final EvmChainV1StrategyFactory evmChainV1StrategyFactory;
     private final EvmChainV1Service evmChainV1Service;
 
-    // TODO: Implement Redis caching with the following key structure: [evmChainType, account, tokenAddress, date].
-//       - Cache expiry: 1 hour
-//       - Purpose: Avoid redundant calls to the service and improve response time for identical requests.
+    @Cacheable(value = RedisPrefix.ACCOUNT_TOKEN_DATA, key = "#evmChainType + ':' + #account + ':' + #tokenAddress + #date", unless = "#result == null")
     public AccountTokenV1Response getAccountTokenData(EvmChainType evmChainType, String account, String tokenAddress, LocalDate date) {
 
         Instant dateInstant = TimeUtil.convertLocalDateToInstant(date);

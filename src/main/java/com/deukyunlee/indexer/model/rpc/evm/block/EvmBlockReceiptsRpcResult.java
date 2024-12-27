@@ -3,7 +3,6 @@ package com.deukyunlee.indexer.model.rpc.evm.block;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import java.util.List;
 
@@ -13,7 +12,6 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class EvmBlockReceiptsRpcResult {
     private String jsonrpc;
     private String id;

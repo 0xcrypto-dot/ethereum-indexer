@@ -26,7 +26,7 @@ import java.time.temporal.ChronoUnit;
 @Table(
         name = "ethereum_logs",
         indexes = {
-                @Index(name = "uidx_ethereum_logs_tx_hash_log_index", columnList = "transaction_hash, log_index", unique = true),
+                @Index(name = "uidx_eth_logs_tx_hash_log_index", columnList = "transaction_hash, log_index", unique = true),
         }
 )
 @Getter

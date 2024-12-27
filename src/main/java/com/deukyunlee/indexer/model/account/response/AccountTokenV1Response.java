@@ -3,6 +3,7 @@ package com.deukyunlee.indexer.model.account.response;
 import com.deukyunlee.indexer.model.account.dto.AccountTokenTransferDto;
 import com.deukyunlee.indexer.util.NumberUtil;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonView;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +19,7 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonView()
 public class AccountTokenV1Response {
     @JsonProperty(required = true, value = "balance")
     private BigDecimal balance;

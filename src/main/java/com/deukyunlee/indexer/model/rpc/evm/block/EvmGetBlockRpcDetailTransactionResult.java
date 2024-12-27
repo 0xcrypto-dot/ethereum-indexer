@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 /**
  * Created by dufqkd1004@naver.com on 2024. 12. 26.
@@ -12,7 +11,6 @@ import lombok.ToString;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class EvmGetBlockRpcDetailTransactionResult {
 
     @JsonProperty(value = "from")
