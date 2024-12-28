@@ -13,5 +13,5 @@ public interface EthereumBlockRepository extends JpaRepository<EthereumBlockEnti
     Optional<EthereumBlockEntity> findFirstByOrderByNumberDesc();
     Optional<EthereumBlockEntity> findFirstByOrderByNumberAsc();
 
-    Optional<EthereumBlockEntity> findFirstByTimeLessThanOrderByTimeDesc(Instant date);
+    Optional<EthereumBlockEntity> findFirstByDateOrderByTimeDesc(Instant date);
 }

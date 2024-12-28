@@ -1,4 +1,6 @@
 spring:
+  profiles:
+    active: local
   config:
     import:
       - optional:file:config/infura.yml
@@ -51,6 +53,29 @@ springdoc:
     tags-sorter: alpha
     operations-sorter: alpha
     use-root-path: false
+
+management:
+  endpoint:
+    health:
+      show-details: never
+      enabled: true
+  endpoints:
+    web:
+      base-path: /
+      path-mapping:
+        health: health
+      exposure:
+        include: health
+    enabled-by-default: false
+  health:
+    db:
+      enabled: false
+    diskspace:
+      enabled: false
+    ping:
+      enabled: false
+    redis:
+      enabled: false
 
 swagger:
   schema:

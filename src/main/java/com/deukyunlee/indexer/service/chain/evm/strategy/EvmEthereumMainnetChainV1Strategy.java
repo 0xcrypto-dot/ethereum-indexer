@@ -158,7 +158,7 @@ public class EvmEthereumMainnetChainV1Strategy implements EvmChainV1Strategy {
         List<EthereumDailyBlockEntity> ethereumDailyBlockEntities = new ArrayList<>();
         while (startDate.isBefore(endDate)) {
 
-            EthereumDailyBlockEntity dailyBlockEntity = ethereumBlockRepository.findFirstByTimeLessThanOrderByTimeDesc(startDate)
+            EthereumDailyBlockEntity dailyBlockEntity = ethereumBlockRepository.findFirstByDateOrderByTimeDesc(startDate)
                     .map(EthereumDailyBlockEntity::new)
                     .orElseThrow(() -> new ErrorTypeException("BLOCK_NOT_FOUND_FOR_DATE", CustomErrorType.BLOCK_NOT_FOUND_FOR_DATE));
 

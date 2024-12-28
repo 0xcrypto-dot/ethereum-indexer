@@ -21,7 +21,7 @@ import java.time.Instant;
 @Table(
         name = "ethereum_daily_blocks",
         indexes = {
-                @Index(name = "uidx_eth_daily_blocks_no", columnList = "block_number", unique = true),
+                @Index(name = "uidx_eth_daily_blocks_date_no", columnList = "date, block_number", unique = true),
         }
 )
 @Getter
