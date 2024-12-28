@@ -34,7 +34,7 @@ public class EvmAccountTokenV1FacadeService {
     private final EvmChainV1StrategyFactory evmChainV1StrategyFactory;
     private final EvmChainV1Service evmChainV1Service;
 
-    @Cacheable(value = RedisPrefix.ACCOUNT_TOKEN_DATA, key = "#evmChainType + ':' + #account + ':' + #tokenAddress + #date", unless = "#result == null")
+    @Cacheable(value = RedisPrefix.ACCOUNT_TOKEN_DATA, key = "#evmChainType + ':' + #account + ':' + #tokenAddress + ':' + #date", unless = "#result == null")
     public AccountTokenV1Response getAccountTokenData(EvmChainType evmChainType, String account, String tokenAddress, LocalDate date) {
 
         Instant dateInstant = TimeUtil.convertLocalDateToInstant(date);
