@@ -1,13 +1,15 @@
 # ethereum-indexer
-- 해당 프로젝트는 ETH와 ERC20의 보유량을 추적합니다.
+- 프로젝트는 ETH와 ERC20의 보유량을 추적하는 프로젝트 입니다.
 
 ## 실행 방법
 
 ### 실행 요구 사항
-- 해당 프로그램은 jdk 17버전 이상을 요구합니다.
+- 해당 애플리케이션은 jdk 17버전 이상을 요구합니다.
 
 ### 실행 전 세팅
 1. root 폴더에 config 폴더 생성 후 infura.yml 파일을 만들고, infura에서 발급받은 ApiKey를 추가합니다.
+   ![img_5](https://github.com/user-attachments/assets/f8f167ba-ad6c-4e79-9278-d9d72e67c71d)
+
 - 예시
   ``` 
   infura:
@@ -17,15 +19,34 @@
 2. /src/main/resources 하위 application.yml 파일에서 database 및 redis 관련 정보를 수정합니다.
 - DB 정보 예시
 
-  ![img_3.png](img_3.png)
+  ![img_3](https://github.com/user-attachments/assets/01737252-06ea-47ad-9dfb-b360a4150c70)
+  - localhost:5432 -> DB host 및 port 번호를 변경해 주세요
+  - postgres -> 사용하시는 데이터베이스 명으로 변경해주세요
 
 - Redis 정보 예시
 
-  ![img_4.png](img_4.png)
+  ![img_4](https://github.com/user-attachments/assets/73bfcc93-1c5c-4ecd-93e9-381c6061061a)
+  - host: localhost -> 사용하시는 redis의 host로 변경해주세요
+  - port: 6379 -> 사용하시는 redis의 port로 변경해주세요
+  - password -> 사용하시는 redis의 password로 변경해주세요
+
+3. API 요청 전 최근 7일 생성된 블록에 대한 데이터 적재가 필요합니다.
+  - 적재는 다음과 같은 과정을 거칩니다.
+  - Transactional
+    - block 데이터 생성
+    - transaction 데이터 생성
+    - log 데이터 생성
+    - ERC-20 transfer 데이터 생성
+  - 위 데이터 모두 생성 후 일별 블록 번호 데이터 생성 (해당 과정이 끝나야 API를 통한 보유량 조회가 가능합니다.)
+
+4. (Optional) 추천 사항
+- infura 무료 플랜의 경우 초당 rate limit이 500크레딧이라서 애플리케이션이 정상 작동하지 않을 수 있습니다.
+  - https://developer.metamask.io/ > Configure > Settings > Key Credit Limits > Per second credit rate-limiting을 10000 정도로 세팅하시는 걸 추천드립니다.
+
+
 
 ### 실행 명령어
 ``` ./gradlew bootrun ```
-
 
 ## 패키지 설명
 - client
@@ -65,16 +86,14 @@
 
 
 ## API 명세
-해당 애플리케이션 실행 후, localhost:8080/docs로 접속하시면 됩니다.
+해당 애플리케이션 실행 후, http://localhost:8080/docs 로 접속하시면 됩니다.
+![image](https://github.com/user-attachments/assets/c44fd303-4e04-4389-a506-d65107191d7a)
 
-![img.png](img.png)
 
 ## API 요청 및 응답
-현재 존재하는 API 요청 및 응답은 아래와 같습니다.
+현재 존재하는 API에 대한 요청 및 응답은 아래와 같습니다.
 
-### 요청
-2024/12/20일자 마지막 블록 기준 0x1bf621aa9cee3f6154881c25041bb39aed4ca7cc account의 0xdAC17F958D2ee523a2206206994597C13D831ec7 토큰 보유량 추적
-![img_1.png](img_1.png)
+### 요청 예시
 
-### 응답
-![img_2.png](img_2.png)
+
+### 응답 예시

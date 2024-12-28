@@ -12,7 +12,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * Created by dufqkd1004@naver.com on 2024. 12. 23.
+ * Created by dufqkd1004@naver.com on 2024. 12. 28.
  */
 @Component
 @RequiredArgsConstructor

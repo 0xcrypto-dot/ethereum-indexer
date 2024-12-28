@@ -20,7 +20,7 @@ import java.util.stream.LongStream;
 public class EvmBlockV1FacadeService {
     private final EvmChainV1StrategyFactory evmChainV1StrategyFactory;
     private final EvmChainV1Service evmChainV1Service;
-    private static final long BLOCKS_CREATED_IN_SEVEN_DAYS = 50400;
+    private static final long BLOCKS_CREATED_IN_EIGHT_DAYS = 57600;
 
     public void processBlocks(EvmChainType evmChainType) {
         log.info("*** Start process blocks ***");
@@ -32,7 +32,7 @@ public class EvmBlockV1FacadeService {
         long latestFinalizedBlockNumber = (latestBlockNumber - evmChainType.getBlocksToBeFinalized());
         if (latestFinalizedBlockNumber > latestProcessedBlockNumber) {
             long startBlockNumber = (latestProcessedBlockNumber == 0) ?
-                    latestFinalizedBlockNumber - BLOCKS_CREATED_IN_SEVEN_DAYS :
+                    latestFinalizedBlockNumber - BLOCKS_CREATED_IN_EIGHT_DAYS :
                     latestProcessedBlockNumber + 1;
 
             List<Long> blockNumbers = LongStream.rangeClosed(startBlockNumber, latestFinalizedBlockNumber)

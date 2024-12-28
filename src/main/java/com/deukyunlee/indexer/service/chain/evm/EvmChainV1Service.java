@@ -61,8 +61,6 @@ public class EvmChainV1Service {
         String getBlockJsonInput = EvmRpcMethodType.getJsonParam(EvmRpcMethodType.ETH_GET_BLOCK_BY_NUMBER, String.valueOf(blockNumber), getBlockParam);
         EvmGetBlockRpcResult evmGetBlockRpcResult = rpcSpec.callPost(EvmChainType.ETHEREUM_MAINNET, getBlockJsonInput, EvmRpcMethodType.ETH_GET_BLOCK_BY_NUMBER.getMaxRetryCount(), EvmGetBlockRpcResult.class);
 
-//        SleepUtil.wait(800);
-
         String getBlockReceiptsParam = String.format(EvmRpcMethodType.ETH_GET_BLOCK_RECEIPTS.getParamsFormat(), NumberUtil.convertLongToHex(blockNumber));
         String getBlockReceiptsJsonInput = EvmRpcMethodType.getJsonParam(EvmRpcMethodType.ETH_GET_BLOCK_RECEIPTS, String.valueOf(blockNumber), getBlockReceiptsParam);
         EvmBlockReceiptsRpcResult evmBlockReceiptsRpcResult = rpcSpec.callPost(strategy.getStrategyName(), getBlockReceiptsJsonInput, EvmRpcMethodType.ETH_GET_BLOCK_RECEIPTS.getMaxRetryCount(), EvmBlockReceiptsRpcResult.class);
@@ -76,7 +74,6 @@ public class EvmChainV1Service {
         strategy.storeLogs(blockNumber, blockTime, evmBlockReceiptsRpcResult.getResult());
 
         log.info("End block related block number : {}/{}", blockNumber, endBlockNumber);
-//        SleepUtil.wait(800);
     }
 }
 
