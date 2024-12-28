@@ -34,7 +34,7 @@ public class EvmNativeTokenV1Strategy implements EvmTokenV1Strategy {
     public void checkContractDeployed(EvmChainType evmChainType, String tokenAddress, long blockNumber) {
 
         // For native tokens, assume they exist on the mainnet if the token symbol matches.
-        if (!evmChainType.getNativeTokenSymbol().equals(tokenAddress)) {
+        if (!evmChainType.getNativeTokenSymbol().equalsIgnoreCase(tokenAddress)) {
             throw new ErrorTypeException("TOKEN_NOT_EXISTS_ON_CHAIN", CustomErrorType.TOKEN_NOT_EXISTS_ON_CHAIN);
         }
     }

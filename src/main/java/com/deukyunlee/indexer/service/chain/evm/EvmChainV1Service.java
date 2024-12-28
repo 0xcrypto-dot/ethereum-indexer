@@ -1,5 +1,7 @@
 package com.deukyunlee.indexer.service.chain.evm;
 
+import com.deukyunlee.indexer.exception.CustomErrorType;
+import com.deukyunlee.indexer.exception.ErrorTypeException;
 import com.deukyunlee.indexer.model.account.dto.AccountTokenTransferDto;
 import com.deukyunlee.indexer.model.rpc.evm.result.block.EvmGetBlockRpcResult;
 import com.deukyunlee.indexer.model.rpc.evm.result.block.EvmBlockReceiptsRpcResult;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.Optional;
 
 
 /**

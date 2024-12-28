@@ -28,8 +28,8 @@ public class EthereumMainnetV1Controller {
     public AccountTokenV1Response getAccountTokenData(@RequestBody @Valid AccountTokenV1Request request) {
         return evmAccountTokenV1FacadeService.getAccountTokenData(
                 EvmChainType.ETHEREUM_MAINNET,
-                request.getAccount(),
-                request.getTokenAddress(),
+                request.getAccount().toLowerCase(),
+                request.getTokenAddress().toLowerCase(),
                 request.getDate()
         );
     }

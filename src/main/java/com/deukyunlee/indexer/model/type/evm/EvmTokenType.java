@@ -16,7 +16,7 @@ public enum EvmTokenType implements CodeEnum {
     }
 
     public static EvmTokenType getTokenAddress(EvmChainType evmChainType, String tokenAddress) {
-        if (evmChainType.getNativeTokenSymbol().equals(tokenAddress)) {
+        if (evmChainType.getNativeTokenSymbol().equalsIgnoreCase(tokenAddress)) {
             return EvmTokenType.NATIVE;
         } else {
             return EvmTokenType.ERC_20;
