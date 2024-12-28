@@ -91,16 +91,38 @@ public class EvmEthereumMainnetChainV1Strategy implements EvmChainV1Strategy {
 
     @Override
     public List<AccountTokenTransferDto> getErc20Transfers(Instant date, String accountAddress, String tokenAddress) {
-        return ethereumErc20TransferRepository.findAllByBlockDateAndContractAddressAndFromOrTo(date, tokenAddress, accountAddress, accountAddress).stream()
+
+        List<EthereumErc20TransferEntity> fromTransfers = ethereumErc20TransferRepository.findAllByBlockDateAndContractAddressAndFrom(date, tokenAddress, accountAddress);
+
+        List<EthereumErc20TransferEntity> toTransfers = ethereumErc20TransferRepository.findAllByBlockDateAndContractAddressAndTo(date, tokenAddress, accountAddress);
+
+        List<EthereumErc20TransferEntity> combinedTransfers = new ArrayList<>();
+        combinedTransfers.addAll(fromTransfers);
+        combinedTransfers.addAll(toTransfers);
+
+
+        return combinedTransfers.stream()
+                .distinct()
                 .map(AccountTokenTransferDto::new)
                 .toList();
     }
 
     @Override
     public List<AccountTokenTransferDto> getTransactions(Instant date, String accountAddress) {
-        return ethereumTransactionRepository.findAllByBlockDateAndSuccessAndFromOrTo(date, transctionSuccess, accountAddress, accountAddress).stream()
+        List<EthereumTransactionEntity> fromTransactions = ethereumTransactionRepository.findAllByBlockDateAndSuccessAndFrom(date, transctionSuccess, accountAddress);
+
+        List<EthereumTransactionEntity> toTransactions = ethereumTransactionRepository.findAllByBlockDateAndSuccessAndTo(date, transctionSuccess, accountAddress);
+
+        List<EthereumTransactionEntity> combinedTransactions = new ArrayList<>();
+        combinedTransactions.addAll(fromTransactions);
+        combinedTransactions.addAll(toTransactions);
+
+
+        return combinedTransactions.stream()
+                .distinct()
                 .map(AccountTokenTransferDto::new)
                 .toList();
+
     }
 
     @Override

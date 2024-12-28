@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigInteger;
 import java.time.Instant;
+import java.util.Objects;
 
 /**
  * Created by dufqkd1004@naver.com on 2024. 12. 26.
@@ -74,5 +75,18 @@ public class EthereumErc20TransferEntity extends BaseEntity {
         this.to = AddressUtil.removeZeroPadding(ethereumLogEntity.getTopic2(), AddressUtil.ERC_20_TRANSFER_ADDRESS_TOPIC_BEGIN_INDEX);
         this.amount = NumberUtil.convertHexToBigInteger(ethereumLogEntity.getData());
         this.blockDate = ethereumLogEntity.getBlockDate();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EthereumErc20TransferEntity that = (EthereumErc20TransferEntity) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

@@ -18,6 +18,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigInteger;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.Objects;
 import java.util.Optional;
 
 
@@ -119,5 +120,18 @@ public class EthereumTransactionEntity extends BaseEntity {
         this.hash = transactionDetail.getHash();
         this.type = transactionDetail.getType();
         this.blockDate = blockTime.truncatedTo(ChronoUnit.DAYS);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EthereumTransactionEntity that = (EthereumTransactionEntity) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

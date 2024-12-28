@@ -10,5 +10,6 @@ import java.util.List;
  * Created by dufqkd1004@naver.com on 2024. 12. 25.
  */
 public interface EthereumErc20TransferRepository extends JpaRepository<EthereumErc20TransferEntity, Long> {
-    List<EthereumErc20TransferEntity> findAllByBlockDateAndContractAddressAndFromOrTo(Instant date, String contractAddress, String from, String to);
+    List<EthereumErc20TransferEntity> findAllByBlockDateAndContractAddressAndFrom(Instant date, String contractAddress, String from);
+    List<EthereumErc20TransferEntity> findAllByBlockDateAndContractAddressAndTo(Instant date, String contractAddress, String to);
 }

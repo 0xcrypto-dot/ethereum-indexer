@@ -5,6 +5,7 @@ import com.deukyunlee.indexer.entity.evm.ethereum.EthereumTransactionEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.math.BigInteger;
 import java.time.Instant;
@@ -15,6 +16,7 @@ import java.time.Instant;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class AccountTokenTransferDto {
     private String from;
     private String to;
