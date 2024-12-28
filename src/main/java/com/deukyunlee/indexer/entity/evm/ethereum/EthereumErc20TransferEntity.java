@@ -40,7 +40,7 @@ public class EthereumErc20TransferEntity extends BaseEntity {
     @Column(name = "block_number", nullable = false)
     private long blockNumber;
 
-    @Column(name = "block_time", nullable = false)
+    @Column(name = "block_time", columnDefinition = "TIMESTAMP", nullable = false)
     private Instant blockTime;
 
     @Column(name = "transaction_hash", nullable = false)

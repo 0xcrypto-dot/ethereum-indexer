@@ -40,7 +40,7 @@
   - 위 데이터 모두 생성 후 일별 블록 번호 데이터 생성 (해당 과정이 끝나야 API를 통한 보유량 조회가 가능합니다.)
 
 4. (Optional) 추천 사항
-- infura 무료 플랜의 경우 초당 rate limit이 500크레딧이라서 애플리케이션이 정상 작동하지 않을 수 있습니다.
+- infura 무료 플랜의 경우 초당 rate limit이 500 크레딧이므로 애플리케이션이 정상 작동하지 않을 수 있습니다.
   - https://developer.metamask.io/ > Configure > Settings > Key Credit Limits > Per second credit rate-limiting을 10000 정도로 세팅하시는 걸 추천드립니다.
 
 
@@ -89,11 +89,5 @@
 해당 애플리케이션 실행 후, http://localhost:8080/docs 로 접속하시면 됩니다.
 ![image](https://github.com/user-attachments/assets/c44fd303-4e04-4389-a506-d65107191d7a)
 
-
-## API 요청 및 응답
-현재 존재하는 API에 대한 요청 및 응답은 아래와 같습니다.
-
-### 요청 예시
-
-
-### 응답 예시
+### API 테스트
+데이터 적재 후 /http/accountToken.http 파일을 통해 테스트 가능합니다.

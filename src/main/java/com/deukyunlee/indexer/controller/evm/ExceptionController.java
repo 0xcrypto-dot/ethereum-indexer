@@ -18,10 +18,6 @@ import org.springframework.web.client.HttpServerErrorException;
 import java.util.Map;
 import java.util.Optional;
 
-import static com.deukyunlee.indexer.exception.ErrorLogLevel.ERROR;
-import static com.deukyunlee.indexer.exception.ErrorLogLevel.INFO;
-import static com.deukyunlee.indexer.exception.ErrorLogLevel.WARN;
-
 /**
  * Created by dufqkd1004@naver.com on 2024. 12. 27.
  */

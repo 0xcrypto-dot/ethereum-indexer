@@ -3,9 +3,9 @@ POST {{apiAddress}}/v1/ethereum/mainnet/accounts/tokens/transactions
 Content-Type: application/json;charset=UTF-8
 
 {
-  "account": "0x39da41747a83aee658334415666f3ef92dd0d541",
+  "account": "0x0e423605a719C02078F0E30e97303349bEf7540c",
   "tokenAddress": "ETH",
-  "date": "20241221"
+  "date": "20241220"
 }
 
 ### {post} ERC20 보유량
@@ -13,7 +13,7 @@ POST {{apiAddress}}/v1/ethereum/mainnet/accounts/tokens/transactions
 Content-Type: application/json;charset=UTF-8
 
 {
-  "account": "0x1bf621aa9cee3f6154881c25041bb39aed4ca7cc",
-  "tokenAddress": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-  "date": "20241221"
+  "account": "0xdf5917540206f808Ee07deA6218fDeF0869A97AE",
+  "tokenAddress": "0x13E4b8CfFe704d3De6F19E52b201d92c21EC18bD",
+  "date": "20241220"
 }
